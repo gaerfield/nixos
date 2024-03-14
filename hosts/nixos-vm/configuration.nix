@@ -61,6 +61,13 @@
 
   # List services that you want to enable:
 
+  # qemu guest extensions
+  # Had it enabled for sharing a local folder, but it's pretty useless 
+  # (meaning slow). 'sshfs' works better
+  #services.qemuGuest.enable = true;
+  #services.spice-vdagentd.enable = true;
+  #services.spice-webdavd.enable = true;
+
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave
