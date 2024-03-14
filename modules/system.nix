@@ -44,6 +44,33 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
+  fonts = {
+    packages = with pkgs; [
+      # icon fonts
+      material-design-icons
+
+      # normal fonts
+      noto-fonts
+      noto-fonts-color-emoji
+
+      # nerdfonts
+      (nerdfonts.override {fonts = ["FiraCode" "JetBrainsMono"];})
+    ];
+
+    # use fonts specified by user rather than default ones
+    enableDefaultPackages = false;
+
+    # user defined fonts
+    # the reason there's Noto Color Emoji everywhere is to override DejaVu's
+    # B&W emojis that would sometimes show instead of some Color emojis
+    fontconfig.defaultFonts = {
+      serif = ["Noto Serif" "Noto Color Emoji"];
+      sansSerif = ["Noto Sans" "Noto Color Emoji"];
+      monospace = ["JetBrainsMono Nerd Font" "Noto Color Emoji"];
+      emoji = ["Noto Color Emoji"];
+    };
+  };
+
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
@@ -73,6 +100,9 @@
     git
     sysstat
     lm_sensors
+    alacritty
+    firefox
+    noto-fonts-color-emoji
   ];
 
   # Enable sound with pipewire.

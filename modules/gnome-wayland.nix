@@ -10,10 +10,10 @@
 
 
   environment = {
-    systemPackages = with pkgs; [ gnome.dconf-editor gnome.adwaita-icon-theme gnomeExtensions.appindicator ] ++ [
-      pkgs.alacritty
-      pkgs.firefox
-      pkgs.noto-fonts-color-emoji
+    systemPackages = with pkgs; [ 
+      gnome.dconf-editor
+      gnome.adwaita-icon-theme
+      gnomeExtensions.appindicator
     ];
 
     gnome.excludePackages = (with pkgs; [
@@ -39,33 +39,6 @@
 
   programs.dconf.enable = true;
   services.udev.packages = with pkgs; [ gnome.gnome-settings-daemon ];
-
-  fonts = {
-    packages = with pkgs; [
-      # icon fonts
-      material-design-icons
-
-      # normal fonts
-      noto-fonts
-      noto-fonts-color-emoji
-
-      # nerdfonts
-      (nerdfonts.override {fonts = ["FiraCode" "JetBrainsMono"];})
-    ];
-
-    # use fonts specified by user rather than default ones
-    enableDefaultPackages = false;
-
-    # user defined fonts
-    # the reason there's Noto Color Emoji everywhere is to override DejaVu's
-    # B&W emojis that would sometimes show instead of some Color emojis
-    fontconfig.defaultFonts = {
-      serif = ["Noto Serif" "Noto Color Emoji"];
-      sansSerif = ["Noto Sans" "Noto Color Emoji"];
-      monospace = ["JetBrainsMono Nerd Font" "Noto Color Emoji"];
-      emoji = ["Noto Color Emoji"];
-    };
-  };
 
   # enable tripple buffering - probably to be removed on next stable
   nixpkgs.overlays = [
