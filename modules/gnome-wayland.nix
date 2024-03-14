@@ -14,6 +14,9 @@
       gnome.dconf-editor
       gnome.adwaita-icon-theme
       gnomeExtensions.appindicator
+      firefox
+      alacritty
+      noto-fonts-color-emoji
     ];
 
     gnome.excludePackages = (with pkgs; [

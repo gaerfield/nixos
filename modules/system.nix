@@ -100,9 +100,6 @@
     git
     sysstat
     lm_sensors
-    alacritty
-    firefox
-    noto-fonts-color-emoji
   ];
 
   # Enable sound with pipewire.
