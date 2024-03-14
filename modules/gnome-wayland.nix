@@ -8,12 +8,6 @@
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
 
-
-  programs.dconf.enable = true;
-  environment.systemPackages = [ gnome.adwaita-icon-theme ];
-  environment.systemPackages = with pkgs; [ gnomeExtensions.appindicator ];
-  services.udev.packages = with pkgs; [ gnome.gnome-settings-daemon ];
-
   environment.gnome.excludePackages = (with pkgs; [
     # gnome-photos
     gnome-tour
@@ -32,6 +26,38 @@
     hitori # sudoku game
     atomix # puzzle game
   ]);
+
+  programs.dconf.enable = true;
+  environment.systemPackages = with pkgs; [ gnome.adwaita-icon-theme gnomeExtensions.appindicator ];
+  services.udev.packages = with pkgs; [ gnome.gnome-settings-daemon ];
+
+  fonts = {
+    packages = with pkgs; [
+      # icon fonts
+      material-design-icons
+
+      # normal fonts
+      noto-fonts
+      noto-fonts-cjk
+      noto-fonts-emoji
+
+      # nerdfonts
+      (nerdfonts.override {fonts = ["FiraCode" "JetBrainsMono"];})
+    ];
+
+    # use fonts specified by user rather than default ones
+    enableDefaultPackages = false;
+
+    # user defined fonts
+    # the reason there's Noto Color Emoji everywhere is to override DejaVu's
+    # B&W emojis that would sometimes show instead of some Color emojis
+    fontconfig.defaultFonts = {
+      serif = ["Noto Serif" "Noto Color Emoji"];
+      sansSerif = ["Noto Sans" "Noto Color Emoji"];
+      monospace = ["JetBrainsMono Nerd Font" "Noto Color Emoji"];
+      emoji = ["Noto Color Emoji"];
+    };
+  };
 
   # enable tripple buffering - probably to be removed on next stable
   nixpkgs.overlays = [
