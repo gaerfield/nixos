@@ -9,8 +9,7 @@
   imports = [
     ../../modules/system.nix
     ../../modules/gnome-wayland.nix
-    #../../modules/i3.nix
-
+    
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
   ];
@@ -42,6 +41,7 @@
     fish.enable = true;
   };
 
+  ### automatic login ###
   # Enable automatic login for the user.
   services.xserver.displayManager.autoLogin.enable = true;
   services.xserver.displayManager.autoLogin.user = "gaerfield";

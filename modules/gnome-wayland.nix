@@ -13,6 +13,7 @@
     systemPackages = with pkgs; [ gnome.dconf-editor gnome.adwaita-icon-theme gnomeExtensions.appindicator ] ++ [
       pkgs.alacritty
       pkgs.firefox
+      pkgs.noto-fonts-color-emoji
     ];
 
     gnome.excludePackages = (with pkgs; [
@@ -46,8 +47,7 @@
 
       # normal fonts
       noto-fonts
-      noto-fonts-cjk
-      noto-fonts-emoji
+      noto-fonts-color-emoji
 
       # nerdfonts
       (nerdfonts.override {fonts = ["FiraCode" "JetBrainsMono"];})
