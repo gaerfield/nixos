@@ -99,6 +99,7 @@
     userEmail = "gaerfield@users.noreply.github.com";
   };
 
+  programs.fish.enable = true;
   programs.bash = {
     enable = true;
     enableCompletion = true;

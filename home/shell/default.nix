@@ -1,8 +1,47 @@
-{config, ...}: let
+{ pkgs, config, ... }:
+let
   d = config.xdg.dataHome;
   c = config.xdg.configHome;
   cache = config.xdg.cacheHome;
 in {
+  # https://nixos.wiki/wiki/Fish
+  # switch to fish if parent is not fish already
+  programs.bash = {
+    initExtra = ''
+      if [[ $(${pkgs.procps}/bin/ps --no-header --pid=$PPID --format=comm) != "fish" && -z ''${BASH_EXECUTION_STRING} ]]
+      then
+        shopt -q login_shell && LOGIN_OPTION='--login' || LOGIN_OPTION=""
+        exec ${pkgs.fish}/bin/fish $LOGIN_OPTION
+      fi
+    '';
+  };
+
+  # fish config
+  home.packages = [ pkgs.fzf ];
+  programs.fish = {
+    enable = true;
+    interactiveShellInit = ''
+      set fish_greeting # Disable greeting
+    '';
+    plugins = with pkgs.fishPlugins; [
+      # { name = "grc"; src = pkgs.fishPlugins.grc.src; }
+      { name = "fzf"; src = pkgs.fishPlugins.fzf.src; }
+      { name = "tide"; src = pkgs.fishPlugins.tide.src; }
+      { name = "sdkman-for-fish"; src = pkgs.fishPlugins."sdkman-for-fish".src; }
+      { name = "sponge"; src = pkgs.fishPlugins.sponge.src; }
+    ];
+  };
+
+  # branchvincent/tide-show-on-cmd
+  #oh-my-fish/plugin-extract
+  # lgathy/google-cloud-sdk-fish-completion
+  #gazorby/fish-abbreviation-tips
+  
+  xdg.configFile."fish/conf.d" = {
+    source = ./conf.d;
+    recursive = true;
+  };
+
   # imports = [
   #   ./nushell
   #   ./common.nix
@@ -13,9 +52,9 @@ in {
   # add environment variables
   home.sessionVariables = {
     # clean up ~
-    LESSHISTFILE = cache + "/less/history";
-    LESSKEY = c + "/less/lesskey";
-    WINEPREFIX = d + "/wine";
+    # LESSHISTFILE = cache + "/less/history";
+    # LESSKEY = c + "/less/lesskey";
+    # WINEPREFIX = d + "/wine";
 
     # set default applications
     EDITOR = "nvim";
@@ -25,10 +64,10 @@ in {
     # enable scrolling in git diff
     DELTA_PAGER = "less -R";
 
-    MANPAGER = "sh -c 'col -bx | bat -l man -p'";
+    #MANPAGER = "sh -c 'col -bx | bat -l man -p'";
   };
 
   home.shellAliases = {
-    k = "kubectl";
+    # k = "kubectl";
   };
 }
