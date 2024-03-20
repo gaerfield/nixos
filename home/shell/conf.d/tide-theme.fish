@@ -79,11 +79,11 @@ set --global tide_pwd_bg_color 3465A4
 set --global tide_pwd_color_anchors E4E4E4
 set --global tide_pwd_color_dirs E4E4E4
 set --global tide_pwd_color_truncated_dirs BCBCBC
-set --global tide_pwd_markers .bzr .citc .git .hg .node-version .python-version .ruby-version .shorten_folder_marker .svn .terraform Cargo.toml composer.json CVS go.mod package.json build.zig
+set --global tide_pwd_markers .bzr .citc .git .hg .node-version .python-version .ruby-version .shorten_folder_marker .svn .terraform Cargo.toml composer.json CVS go.mod package.json
 set --global tide_python_bg_color 444444
 set --global tide_python_color 00AFAF
 set --global tide_right_prompt_frame_enabled true
-set --global tide_right_prompt_items status cmd_duration context jobs direnv node python rustc java php pulumi ruby go gcloud kubectl distrobox toolbox terraform aws nix_shell crystal elixir zig
+set --global tide_right_prompt_items status cmd_duration context jobs direnv node python rustc java php pulumi ruby go gcloud kubectl distrobox toolbox terraform aws nix_shell crystal elixir
 set --global tide_right_prompt_prefix 
 set --global tide_right_prompt_separator_diff_color 
 set --global tide_right_prompt_separator_same_color 
@@ -114,5 +114,3 @@ set --global tide_vi_mode_color_default 000000
 set --global tide_vi_mode_color_insert 000000
 set --global tide_vi_mode_color_replace 000000
 set --global tide_vi_mode_color_visual 000000
-set --global tide_zig_bg_color F7A41D
-set --global tide_zig_color 000000
