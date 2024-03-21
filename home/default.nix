@@ -2,13 +2,10 @@
 
 {
   imports = [
+    ./flameshot.nix
     ./gnome
     ./shell
-  #   ./fcitx5
-  #   ./i3
-  #   ./programs
-  #   ./rofi
-  #   ./shell
+    ./vscode.nix
   ];
 
   home = {
@@ -78,7 +75,6 @@
 
     # productivity
     glow # markdown previewer in terminal
-
     btop  # replacement of htop/nmon
     iotop # io monitoring
     iftop # network monitoring
@@ -97,11 +93,5 @@
     enable = true;
     userName = "gaerfield";
     userEmail = "gaerfield@users.noreply.github.com";
-  };
-
-  programs.fish.enable = true;
-  programs.bash = {
-    enable = true;
-    enableCompletion = true;
   };
 }

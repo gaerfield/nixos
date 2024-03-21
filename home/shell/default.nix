@@ -6,11 +6,15 @@ let
 in {
   imports = [
     ./fzf.nix
+    ./zoxide.nix
   ];
 
   # https://nixos.wiki/wiki/Fish
   # switch to fish if parent is not fish already
   programs.bash = {
+    enable = true;
+    enableCompletion = true;
+
     initExtra = ''
       if [[ $(${pkgs.procps}/bin/ps --no-header --pid=$PPID --format=comm) != "fish" && -z ''${BASH_EXECUTION_STRING} ]]
       then
