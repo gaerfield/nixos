@@ -8,11 +8,11 @@
     ./vscode.nix
   ];
 
-  home = {
-    username = "gaerfield";
-    homeDirectory = "/home/gaerfield";
-    stateVersion = "23.11";
-  };
+  #home = {
+  #  username = "gaerfield";
+  #  homeDirectory = "/home/gaerfield";
+  #  stateVersion = "23.11";
+  #};
 
   # Let home Manager install and manage itself.
   programs.home-manager.enable = true;
