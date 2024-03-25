@@ -2,12 +2,12 @@
 
 {
   imports = [
-     ./base.nix
+     ./../../home
   ];
 
   home = {
-    username = "gaerfield";
-    homeDirectory = "/home/gaerfield";
+    username = "blaschke";
+    homeDirectory = "/home/blaschke";
     stateVersion = "23.11";
   };
 }

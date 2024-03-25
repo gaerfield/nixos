@@ -18,7 +18,7 @@
         home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.gaerfield = import ./home/private.nix;
+            home-manager.users.gaerfield = import ./hosts/nixos-vm/home.nix;
 
             # Optionally, use home-manager.extraSpecialArgs to pass
             # arguments to home.nix
@@ -34,7 +34,7 @@
         home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.blaschke = import ./home/work.nix;
+            home-manager.users.blaschke = import ./hosts/work/home.nix;
 
             # Optionally, use home-manager.extraSpecialArgs to pass
             # arguments to home.nix
