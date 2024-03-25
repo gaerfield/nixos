@@ -3,6 +3,7 @@
 {
   imports = [
      ./../../home
+     ./../../home/teams-for-linux.nix
   ];
 
   home = {
