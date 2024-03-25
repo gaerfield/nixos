@@ -9,7 +9,8 @@
     [ # Include the results of the hardware scan.
       ../../modules/system.nix
       ../../modules/gnome-wayland.nix
-
+      ../../modules/virtualization.nix
+      ../../modules/podman.nix
       ./hardware-configuration.nix
     ];
 

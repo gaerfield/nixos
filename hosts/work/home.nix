@@ -4,6 +4,7 @@
   imports = [
      ./../../home
      ./../../home/teams-for-linux.nix
+     ./../../home/virtualization.nix
   ];
 
   home = {
