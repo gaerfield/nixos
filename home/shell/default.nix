@@ -30,11 +30,11 @@ in {
       set fish_greeting # Disable greeting
     '';
     plugins = with pkgs.fishPlugins; [
-      # { name = "grc"; src = pkgs.fishPlugins.grc.src; }
-      { name = "fzf"; src = pkgs.fishPlugins.fzf.src; }
-      { name = "tide"; src = pkgs.fishPlugins.tide.src; }
-      { name = "sdkman-for-fish"; src = pkgs.fishPlugins."sdkman-for-fish".src; }
-      { name = "sponge"; src = pkgs.fishPlugins.sponge.src; }
+      # { name = "grc"; src = grc.src; }
+      { name = "fzf"; src = fzf.src; }
+      { name = "tide"; src = tide.src; }
+      { name = "sdkman-for-fish"; src = sdkman-for-fish.src; }
+      { name = "sponge"; src = sponge.src; }
     ];
   };
   # tide configure --auto --style=Rainbow --prompt_colors='True color' --show_time=No --rainbow_prompt_separators=Angled --powerline_prompt_heads=Sharp --powerline_prompt_tails=Flat --powerline_prompt_style='Two lines, frame' --prompt_connection=Disconnected --powerline_right_prompt_frame=Yes --prompt_connection_andor_frame_color=Light --prompt_spacing=Compact --icons='Few icons' --transient=Yes

@@ -5,6 +5,7 @@
      ./../../home
      ./../../home/teams-for-linux.nix
      ./../../home/virtualization.nix
+     ./../../home/google-cloud-sdk.nix
   ];
 
   home = {
