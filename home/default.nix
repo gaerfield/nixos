@@ -6,6 +6,8 @@
     ./gnome
     ./shell
     ./vscode.nix
+    ./firefox.nix
+    ./chromium.nix
   ];
 
   #home = {

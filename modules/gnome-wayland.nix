@@ -8,16 +8,19 @@
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
 
-
   environment = {
     systemPackages = with pkgs; [ 
       gnome.dconf-editor
       gnome.adwaita-icon-theme
       gnomeExtensions.appindicator
       firefox
+      chromium
       alacritty
       noto-fonts-color-emoji
     ];
+    
+    # enable wayland support for all chromium and most electron apps
+    sessionVariables.NIXOS_OZONE_WL = "1";
 
     gnome.excludePackages = (with pkgs; [
       # gnome-photos
