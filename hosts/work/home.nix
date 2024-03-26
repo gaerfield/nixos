@@ -7,6 +7,8 @@
      ./../../home/virtualization.nix
      ./../../home/google-cloud-sdk.nix
      ./../../home/kubectl.nix
+     ./../../home/java.nix
+     ./../../home/idea.nix
   ];
 
   home = {
@@ -30,8 +32,8 @@
         	  sshCommand = "ssh -i ~/.ssh/blatobi";
           };
         };
-  
-        condition = "gitdir:~/IdeaProjects/payfree";
+        # trailing slash is very important for directories :-(
+        condition = "gitdir:~/IdeaProjects/payfree/";
       }
     ];
   };
