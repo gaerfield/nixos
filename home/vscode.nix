@@ -2,7 +2,7 @@
   fonts.fontconfig.enable = true;
   home.packages = [ (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; }) ];
 
-  programs.fish.shellAbbrs.code = "${config.programs.vscode.package}/bin/code";
+  programs.fish.shellAbbrs.code = "codium";
 
   programs.vscode = {
     enable = true;

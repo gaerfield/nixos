@@ -7,6 +7,7 @@ in {
   imports = [
     ./fzf.nix
     ./zoxide.nix
+    ./nix-direnv.nix
   ];
 
   # https://nixos.wiki/wiki/Fish

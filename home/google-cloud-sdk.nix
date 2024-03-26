@@ -1,11 +1,9 @@
-{ pkgs, config, ... }:
-let
-  gsdk = pkgs.google-cloud-sdk.withExtraComponents( with pkgs.google-cloud-sdk.components; [
-    gke-gcloud-auth-plugin
-  ]);
-in
-{
-  home.packages = [ pkgs.google-cloud-sdk ];
+{ pkgs, config, system, ... }: {
+
+  home.packages = with pkgs; [
+    google-cloud-sdk
+    # (google-cloud-sdk.withExtraComponents [google-cloud-sdk.components.gke-gcloud-auth-plugin])
+  ];
 
   programs.fish = {
     plugins = [
