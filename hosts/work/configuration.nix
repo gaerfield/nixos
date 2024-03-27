@@ -11,6 +11,7 @@
       ../../modules/gnome-wayland.nix
       ../../modules/virtualization.nix
       ../../modules/podman.nix
+      ../../modules/nix-ld.nix
       ./hardware-configuration.nix
     ];
 
