@@ -17,6 +17,7 @@
       chromium
       alacritty
       noto-fonts-color-emoji
+      wl-clipboard
     ];
     
     # enable wayland support for all chromium and most electron apps
