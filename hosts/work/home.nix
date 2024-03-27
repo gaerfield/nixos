@@ -1,20 +1,28 @@
-{ config, pkgs, ... }:
-
 {
+  inputs,
+  outputs,
+  lib,
+  config,
+  pkgs,
+  ...
+}: {
+
   imports = [
-     ./../../home
-     ./../../home/teams-for-linux.nix
-     ./../../home/virtualization.nix
-     ./../../home/google-cloud-sdk.nix
-     ./../../home/kubectl.nix
-     ./../../home/java.nix
-     ./../../home/idea.nix
+    ./../../home
+    ./../../home/teams-for-linux.nix
+    ./../../home/virtualization.nix
+    ./../../home/google-cloud-sdk.nix
+    ./../../home/kubectl.nix
+    ./../../home/java.nix
+    ./../../home/idea.nix
   ];
 
+  # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
+  home.stateVersion = "23.11";
+  
   home = {
     username = "blaschke";
     homeDirectory = "/home/blaschke";
-    stateVersion = "23.11";
   };
 
   programs.git = {

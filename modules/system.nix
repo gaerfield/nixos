@@ -101,6 +101,7 @@
     git
     sysstat
     lm_sensors
+    home-manager
   ];
 
   # Enable sound with pipewire.
