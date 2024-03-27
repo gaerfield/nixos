@@ -10,6 +10,7 @@
   imports = [
     ./../../home
     ./../../home/teams-for-linux.nix
+    ./../../home/rambox.nix
     ./../../home/virtualization.nix
     ./../../home/google-cloud-sdk.nix
     ./../../home/kubectl.nix
