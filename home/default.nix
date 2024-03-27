@@ -119,6 +119,7 @@
     ethtool
     pciutils # lspci
     usbutils # lsusb
+    vlc
   ];
 
   # basic configuration of git
