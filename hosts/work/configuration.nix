@@ -7,12 +7,12 @@
 {
   imports =
     [
-      ../../pkg-configs/nixos/system.nix
-      ../../pkg-configs/nixos/gnome-wayland.nix
-      ../../pkg-configs/nixos/virtualization.nix
-      ../../pkg-configs/nixos/podman.nix
-      ../../pkg-configs/nixos/nix-ld.nix
-      ../../pkg-configs/nixos/flatpak.nix
+      ./../../pkg-configs/nixos/system.nix
+      ./../../pkg-configs/nixos/gnome-wayland.nix
+      ./../../pkg-configs/nixos/virtualization.nix
+      ./../../pkg-configs/nixos/podman.nix
+      ./../../pkg-configs/nixos/nix-ld.nix
+      ./../../pkg-configs/nixos/appimage.nix
       ./hardware-configuration.nix
     ];
 
