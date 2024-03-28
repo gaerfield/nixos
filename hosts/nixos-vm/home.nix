@@ -8,7 +8,7 @@
 }: {
   
   imports = [
-    ./../../home
+    ./../../pkg-configs/home/base
   ];
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion

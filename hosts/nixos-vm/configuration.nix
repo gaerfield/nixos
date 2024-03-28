@@ -7,8 +7,8 @@
 {
 
   imports = [
-    ../../modules/system.nix
-    ../../modules/gnome-wayland.nix
+    ../../pkg-configs/nixos/system.nix
+    ../../pkg-configs/nixos/gnome-wayland.nix
     
     # Include the results of the hardware scan.
     ./hardware-configuration.nix

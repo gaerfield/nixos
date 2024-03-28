@@ -8,14 +8,14 @@
 }: {
 
   imports = [
-    ./../../home
-    ./../../home/teams-for-linux.nix
-    ./../../home/rambox.nix
-    ./../../home/virtualization.nix
-    ./../../home/google-cloud-sdk.nix
-    ./../../home/kubectl.nix
-    ./../../home/java.nix
-    ./../../home/idea.nix
+    ./../../pkg-configs/home/base
+    ./../../pkg-configs/home/teams-for-linux.nix
+    ./../../pkg-configs/home/rambox.nix
+    ./../../pkg-configs/home/virtualization.nix
+    ./../../pkg-configs/home/google-cloud-sdk.nix
+    ./../../pkg-configs/home/kubectl.nix
+    ./../../pkg-configs/home/java.nix
+    ./../../pkg-configs/home/idea.nix
   ];
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
