@@ -68,7 +68,7 @@
         ];
       };
 
-      "bmscs-21337" = nixpkgs.lib.nixosSystem {
+      "bms-cs21337" = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = {inherit inputs outputs;};
         
@@ -97,7 +97,7 @@
         ];
       };
 
-      "blaschke@bmscs-21337" = home-manager.lib.homeManagerConfiguration {
+      "blaschke@bms-cs21337" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
         extraSpecialArgs = {inherit inputs outputs;};
 

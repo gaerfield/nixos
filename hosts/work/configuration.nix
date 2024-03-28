@@ -22,7 +22,7 @@
   # depending on how you configured your disk mounts, change this to /boot or /boot/efi.
   boot.loader.efi.efiSysMountPoint = "/boot";
 
-  networking.hostName = "bmscs-21337";
+  networking.hostName = "bms-cs21337";
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   networking.networkmanager.enable = true;
