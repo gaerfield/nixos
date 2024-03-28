@@ -104,6 +104,8 @@
     sysstat
     lm_sensors
     home-manager
+    killall
+    killport
   ];
 
   # Enable sound with pipewire.
