@@ -1,19 +1,6 @@
 { pkgs, lib, ... }:
 
 {
-  environment.sessionVariables = rec {
-    XDG_CACHE_HOME  = "$HOME/.cache";
-    XDG_CONFIG_HOME = "$HOME/.config";
-    XDG_LOCAL_HOME  = "$HOME/.local";
-    XDG_PREFIX_HOME = "$XDG_LOCAL_HOME";
-    XDG_DATA_HOME   = "$XDG_LOCAL_HOME/share";
-    XDG_STATE_HOME  = "$XDG_LOCAL_HOME/state";
-    XDG_BIN_HOME    = "$XDG_LOCAL_HOME/bin";
-    PATH = [
-      "${XDG_BIN_HOME}"
-    ];
-  };
-  
   # do garbage collection weekly to keep disk usage low
   nix.gc = {
     automatic = lib.mkDefault true;

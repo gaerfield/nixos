@@ -7,7 +7,7 @@
   services.xserver.enable = true;
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
-
+  
   environment = {
     systemPackages = with pkgs; [ 
       gnome.dconf-editor
@@ -18,8 +18,9 @@
       alacritty
       noto-fonts-color-emoji
       wl-clipboard
+      libsecret
     ];
-    
+
     # enable wayland support for all chromium and most electron apps
     sessionVariables.NIXOS_OZONE_WL = "1";
 

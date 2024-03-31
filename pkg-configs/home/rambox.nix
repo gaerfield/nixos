@@ -1,3 +1,3 @@
 { pkgs, ... }: {
-  home.packages = [ pkgs.unstable.rambox ];
+  home.packages = [ pkgs.rambox ];
 }
