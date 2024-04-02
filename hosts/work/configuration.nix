@@ -8,6 +8,7 @@
   imports =
     [
       ./../../pkg-configs/nixos/system.nix
+      ./../../pkg-configs/nixos/bluetooth.nix
       ./../../pkg-configs/nixos/gnome-wayland.nix
       ./../../pkg-configs/nixos/virtualization.nix
       ./../../pkg-configs/nixos/podman.nix
