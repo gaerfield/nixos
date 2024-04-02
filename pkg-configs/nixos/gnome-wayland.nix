@@ -13,6 +13,7 @@
       gnome.dconf-editor
       gnome.adwaita-icon-theme
       gnomeExtensions.appindicator
+      gnome.gnome-tweaks
       firefox
       chromium
       alacritty

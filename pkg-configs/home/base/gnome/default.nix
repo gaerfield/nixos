@@ -4,9 +4,13 @@ let
     pkgs.gnomeExtensions.dash-to-dock
   ];
 in {
-  imports = [ ./autostart.nix ];
+  imports = [
+    ./theme.nix
+    ./autostart.nix 
+  ];
 
   fonts.fontconfig.enable = true;
+  
   # TODO remove when `pkgs.cantarell-fonts` is no more broken on darwin
   #home.packages = lib.optionals pkgs.stdenv.isLinux ([
   #  pkgs.cantarell-fonts
