@@ -9,6 +9,7 @@
 
   imports = [
     ./../../pkg-configs/home/base
+    ./../../pkg-configs/home/track-working-day
     ./../../pkg-configs/home/teams-for-linux.nix
     ./../../pkg-configs/home/rambox.nix
     ./../../pkg-configs/home/virtualization.nix
