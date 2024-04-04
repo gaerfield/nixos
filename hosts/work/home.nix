@@ -17,6 +17,8 @@
     ./../../pkg-configs/home/kubectl.nix
     ./../../pkg-configs/home/java.nix
     ./../../pkg-configs/home/idea.nix
+    ./syncthing.nix
+    ./../../pkg-configs/home/obsidian.nix
   ];
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
