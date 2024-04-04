@@ -8,6 +8,7 @@ in {
     ./fzf.nix
     ./zoxide.nix
     ./nix-direnv.nix
+    ./neovim
   ];
 
   # https://nixos.wiki/wiki/Fish
