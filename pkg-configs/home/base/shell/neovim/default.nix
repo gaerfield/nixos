@@ -31,12 +31,17 @@
     ];
 
     extraLuaConfig = ''
+      -- -- specific nvim-tree config
       -- disable netrw at the very start of your init.lua
       vim.g.loaded_netrw = 1
       vim.g.loaded_netrwPlugin = 1
-
       -- empty setup using defaults
       require("nvim-tree").setup()
+      -- blaa
+      vim.keymap.set('n', '<leader>b', ':NvimTreeToggle<CR>')
+      vim.keymap.set('n', '<leader>bf', ':NvimTreeFocus<CR>')
+      vim.keymap.set('n', '<leader>bs', ':NvimTreeFindFile<CR>')
+      vim.keymap.set('n', '<leader>bc', ':NvimTreeCollaps<CR>')
     '';
 
     extraConfig = lib.fileContents ./init.vim;

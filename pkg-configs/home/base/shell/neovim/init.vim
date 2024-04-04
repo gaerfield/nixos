@@ -73,9 +73,4 @@ set whichwrap+=<,>,h,l
 command! -bang -nargs=? -complete=dir Files
 \ call fzf#vim#files(<q-args>, {'options': ['--layout=reverse', '--info=inline', '--preview', 'highlight -O ansi -l {} 2> /dev/null || cat {}']}, <bang>0)
 
-" Plugin keybindings
-""""""""""""""""""""
-map <F5> :NERDTreeToggle<CR>
-map <F2> :Files<CR>
-
 set termguicolors
