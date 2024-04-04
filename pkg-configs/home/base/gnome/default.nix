@@ -6,7 +6,8 @@ let
 in {
   imports = [
     ./theme.nix
-    ./autostart.nix 
+    ./autostart.nix
+    ./flameshot.nix
   ];
 
   fonts.fontconfig.enable = true;
@@ -24,6 +25,13 @@ in {
     enable = true;
 
     settings = {
+      "org/gnome/desktop/interface".enable-hot-corners = false;
+      "org/gnome/shell/app-switcher".current-workspace-only = true;
+      "org/gnome/mutter" = {
+        dynamic-workspaces = true;
+        workspaces-only-on-primary = true;
+      };
+      
       "ca/desrt/dconf-editor/Settings".show-warning = false;
       "org/gnome/desktop/privacy" = {
         old-files-age = 30;
@@ -50,6 +58,7 @@ in {
         switch-to-workspace-left=["<Super>Left"];
         switch-to-workspace-right=["<Super>Right"];
         toggle-maximized=["<Super>m"];
+        toggle-message-tray=[];
       };
       "org/gnome/mutter/keybindings" = {
         toggle-tiled-left=["<Alt><Super>Left"];
@@ -60,14 +69,11 @@ in {
           "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
           "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/"
           "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/"
-          #"/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/"
-          #"/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/"
         ];
         home=["<Super>e"];
         www=["<Super>b"];
       };
 
-      #"org/gnome/nautilus/preferences".open-folder-on-dnd-hover = true;
       "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
         name = "terminal";
         command = "alacritty";
@@ -83,16 +89,6 @@ in {
         command = "killall -3 gnome-shell";
         binding = "<Ctrl><Alt>BackSpace";
       };
-      #"org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3" = {
-      #  name = "screenshoot";
-      #  command = "flameshot gui";
-      #  binding = "Print";
-      #};
-      #"org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4" = {
-      #  name = "screenshot screen";
-      #  command = "flameshot full -p /home/gaerfield/Bilder/screenshots";
-      #  binding = "<Alt>Print";
-      #};
     };
   };
 }

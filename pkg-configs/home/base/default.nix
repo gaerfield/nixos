@@ -13,7 +13,6 @@
     # Or modules exported from other flakes (such as nix-colors):
     # inputs.nix-colors.homeManagerModules.default
 
-    ./flameshot.nix
     ./gnome
     ./shell
     ./vscode.nix
