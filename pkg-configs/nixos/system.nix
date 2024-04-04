@@ -1,6 +1,10 @@
 { pkgs, lib, ... }:
 
 {
+  boot.kernel.sysctl = {
+    "kernel.sysrq" = 1; # enable reisub sequence
+  };
+
   # do garbage collection weekly to keep disk usage low
   nix.gc = {
     automatic = lib.mkDefault true;
