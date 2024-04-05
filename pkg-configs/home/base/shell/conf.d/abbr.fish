@@ -1,5 +1,3 @@
-abbr --add v nvim
-abbr --add vim nvim
 abbr --add sconf nvim $__fish_config_dir
 abbr --add shit --position anywhere "sudo $history[1]"
 abbr --add !! --position anywhere "$history[1]"
@@ -33,5 +31,4 @@ abbr --add c wl-copy
 abbr --add p wl-paste
 abbr --add scpr rsync -avz --info=progress2 --human-readable
 abbr --add netstat ss
-abbr --add tldr tealdeer
 

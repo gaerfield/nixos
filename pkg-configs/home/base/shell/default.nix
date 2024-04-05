@@ -5,6 +5,7 @@
     ./nix-direnv.nix
     ./neovim
     ./byobu.nix
+    ./tealdeer.nix
   ];
 
   # https://nixos.wiki/wiki/Fish
@@ -97,15 +98,12 @@
     recursive = true;
   };
 
-  # imports = [
-  #   ./nushell
-  #   ./common.nix
-  #   ./starship.nix
-  #   ./terminals.nix
-  # ];
-
   # add environment variables
-  # home.sessionVariables = {
+  home.sessionVariables = {
+    PAGER = "bat --paging auto";
+    MANPAGER = "sh -c 'col -bx | bat -l man -p'";
+  };
+
   #   # clean up ~
   #   # LESSHISTFILE = cache + "/less/history";
   #   # LESSKEY = c + "/less/lesskey";

@@ -6,12 +6,14 @@
     "d ${config.xdg.cacheHome}/nvim/view"
   ];
 
+  programs.fish.shellAbbrs = {
+    v = "nvim";
+    vim = "nvim"; 
+  };
+
   programs.neovim = {
     enable = true;
     defaultEditor = true;
-    viAlias = true;
-    vimAlias = true;
-    vimdiffAlias = true;
     withNodeJs = false;
 
     plugins = with pkgs.vimPlugins; [
