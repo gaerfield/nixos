@@ -5,6 +5,7 @@
   };
   programs.fish = {
     shellAbbrs.k = "kubectl";
+    shellAbbrs.krestart = "kubectl rollout restart deployment ";
     shellAbbrs.kcx = "kubectx";
     shellAbbrs.kns = "kubens";
   };

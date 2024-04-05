@@ -35,6 +35,7 @@
       { name = "sdkman-for-fish"; src = sdkman-for-fish.src; }
       { name = "sponge"; src = sponge.src; }
     ];
+    shellAbbrs.lsg = "ls | grep ";
   };
 
   home.packages = with pkgs; [
