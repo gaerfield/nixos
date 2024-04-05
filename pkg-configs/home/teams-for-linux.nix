@@ -1,3 +1,3 @@
-{ pkgs, config, lib, ... }: {
+{ pkgs, ... }: {
   home.packages = [ pkgs.teams-for-linux ];
 }

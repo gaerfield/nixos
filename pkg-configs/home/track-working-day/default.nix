@@ -1,4 +1,4 @@
-{ pkgs, config, system, ... }: {
+{
 
   home.file.".local/bin/track-working-day" = {
     source = ./track-working-day;

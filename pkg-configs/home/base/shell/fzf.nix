@@ -1,4 +1,4 @@
-{ colors, ... }: {
+{
   programs.fzf = {
     enable = true;
 

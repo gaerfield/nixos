@@ -1,4 +1,4 @@
-{ pkgs, config, system, ... }: {
+{ pkgs, ... }: {
 
   home.packages = with pkgs; [
     # google-cloud-sdk

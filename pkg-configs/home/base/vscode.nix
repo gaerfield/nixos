@@ -1,6 +1,6 @@
-{ config, pkgs, lib, ... }: {
+{ pkgs, ... }: {
   fonts.fontconfig.enable = true;
-  home.packages = [ (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; }) ];
+  home.packages = [ (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; }) pkgs.nil ];
 
   programs.fish.shellAbbrs.code = "codium";
 
@@ -14,7 +14,8 @@
     mutableExtensionsDir = false;
 
     extensions = with pkgs.vscode-extensions; [
-      redhat.vscode-yaml
+      shd101wyy.markdown-preview-enhanced
+      jnoortheen.nix-ide
     ];
 
     userSettings = {
@@ -32,6 +33,17 @@
       "workbench.colorTheme" = "Solarized Light";
       "workbench.preferredDarkColorTheme" = "Solarized Dark";
       "workbench.preferredLightColorTheme" = "Solarized Light";
+
+      "nix.enableLanguageServer" = true;
+      "nix.serverPath" = "nil";
+      "nix.formatterPath" = "nixpkgs-fmt";
+      "nix.serverSettings" = {
+        "nil" = { 
+          "formatting" = {
+            "command" = ["nixpkgs-fmt"];
+          };
+        };
+      };
     };
   };
 }

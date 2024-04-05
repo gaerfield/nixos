@@ -1,9 +1,4 @@
-{ pkgs, config, ... }:
-let
-  d = config.xdg.dataHome;
-  c = config.xdg.configHome;
-  cache = config.xdg.cacheHome;
-in {
+{ pkgs, config, ... }: {
   imports = [
     ./fzf.nix
     ./zoxide.nix

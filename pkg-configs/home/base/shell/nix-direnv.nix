@@ -1,4 +1,4 @@
-{ lib, ... }: {
+{
   # https://github.com/nix-community/nix-direnv
   programs = {
     direnv = {
