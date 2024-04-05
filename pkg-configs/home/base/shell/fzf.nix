@@ -1,4 +1,4 @@
-{
+{ pkgs, ... }: {
   programs.fzf = {
     enable = true;
 
@@ -16,4 +16,11 @@
 
     # historyWidgetOptions = [ "--no-multi" ];
   };
+
+  programs.fish.plugins = with pkgs.fishPlugins; [
+    { name = "fzf"; src = fzf.src; }
+    { name = "fzf-fish"; src = fzf-fish.src; } # requires fd and bat
+  ];
+
+  home.packages = [ pkgs.fd pkgs.bat ];
 }
