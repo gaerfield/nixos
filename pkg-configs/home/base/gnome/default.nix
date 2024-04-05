@@ -8,6 +8,7 @@ in {
     ./theme.nix
     ./autostart.nix
     ./flameshot.nix
+    ./alacritty.nix
   ];
 
   fonts.fontconfig.enable = true;

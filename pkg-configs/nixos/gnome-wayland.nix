@@ -16,7 +16,6 @@
       gnome.gnome-tweaks
       firefox
       chromium
-      alacritty
       noto-fonts-color-emoji
       wl-clipboard
       libsecret
