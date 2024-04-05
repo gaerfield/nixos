@@ -4,6 +4,7 @@
     ./zoxide.nix
     ./nix-direnv.nix
     ./neovim
+    ./byobu.nix
   ];
 
   # https://nixos.wiki/wiki/Fish
