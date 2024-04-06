@@ -6,6 +6,7 @@
     ./neovim
     ./byobu.nix
     ./tealdeer.nix
+    ./starship.nix
   ];
 
   # https://nixos.wiki/wiki/Fish
@@ -27,20 +28,24 @@
     enable = true;
     interactiveShellInit = ''
       set fish_greeting # Disable greeting
+      nix-your-shell fish | source # nix-shell will use fish instead of bash
     '';
+    
     plugins = with pkgs.fishPlugins; [
-      # { name = "grc"; src = grc.src; }
+      { name = "grc"; src = grc.src; }
       { name = "fzf"; src = fzf.src; }
       { name = "fzf-fish"; src = fzf-fish.src; } # requires fd and bat
-      { name = "tide"; src = tide.src; }
       { name = "sdkman-for-fish"; src = sdkman-for-fish.src; }
       { name = "sponge"; src = sponge.src; }
+      { name = "colored-man-pages"; src = colored-man-pages.src; }
     ];
     shellAbbrs.lsg = "ls | grep ";
   };
 
   home.packages = with pkgs; [
+    nix-your-shell
     alacritty
+    grc
     # archives
     zip
     unzip
@@ -50,7 +55,8 @@
     jq # A lightweight and flexible command-line JSON processor
     yq-go # yaml processer https://github.com/mikefarah/yq
     fzf # A command-line fuzzy finder
-
+    sshfs # fuse mount directories through ssh
+  
     # networking tools
     mtr # A network diagnostic tool
     iperf3
@@ -90,7 +96,6 @@
   
   # branchvincent/tide-show-on-cmd
   # oh-my-fish/plugin-extract
-  # lgathy/google-cloud-sdk-fish-completion
   # gazorby/fish-abbreviation-tips
   
   xdg.configFile."fish/conf.d" = {
@@ -100,8 +105,8 @@
 
   # add environment variables
   home.sessionVariables = {
-    PAGER = "bat --paging auto";
-    MANPAGER = "sh -c 'col -bx | bat -l man -p'";
+    PAGER = "bat -p";
+    # MANPAGER = "sh -c 'col -bx | bat -l man -p'";
   };
 
   #   # clean up ~

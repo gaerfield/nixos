@@ -1,9 +1,4 @@
-{ pkgs, lib, colors, ... }:
-let
-  extensions = [
-    pkgs.gnomeExtensions.dash-to-dock
-  ];
-in {
+{ pkgs, lib, colors, ... }: {
   imports = [
     ./theme.nix
     ./autostart.nix
@@ -21,6 +16,18 @@ in {
   #  pkgs.papirus-icon-theme
   #  pkgs.yaru-theme
   #] ++ extensions);
+
+  home.packages = with pkgs.gnomeExtensions; [
+    # pkgs.gnome-extensions-cli
+    dash-to-dock
+    gsconnect
+    appindicator
+    gnome-40-ui-improvements
+    material-shell # tiling manager
+    pano # clipboard-manager, required libgda and gsound
+    pkgs.libgda
+    pkgs.gsound
+  ];
 
   dconf = {
     enable = true;
@@ -77,7 +84,7 @@ in {
 
       "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
         name = "terminal";
-        command = "alacritty -e byobu";
+        command = "alacritty"; # alacritty -e byobu
         binding = "<Super>x";
       };
       "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
@@ -89,6 +96,23 @@ in {
         name = "restart gnome";
         command = "killall -3 gnome-shell";
         binding = "<Ctrl><Alt>BackSpace";
+      };
+
+      # gnome-shell-extensions
+      "org/gnome/shell" = {
+        disable-user-extensions = false;
+        enabled-extensions = [
+          "native-window-placement@gnome-shell-extensions.gcampax.github.com"
+          "gsconnect@andyholmes.github.io"
+          "dash-to-dock@micxgx.gmail.com"
+          "appindicatorsupport@rgcjonas.gmail.com"
+        ];
+      };
+
+      "org/gnome/shell/extensions/dash-to-dock" = {
+        show-trash = false;
+        hotkeys-show-dock = false;
+        apply-custom-theme = true;
       };
     };
   };
