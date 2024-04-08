@@ -38,6 +38,9 @@
       "org/gnome/mutter" = {
         dynamic-workspaces = true;
         workspaces-only-on-primary = true;
+        experimental-features = [
+          "scale-monitor-framebuffer" # enable fractional scaling 
+        ];
       };
       
       "ca/desrt/dconf-editor/Settings".show-warning = false;
