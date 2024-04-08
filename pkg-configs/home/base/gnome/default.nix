@@ -33,6 +33,9 @@
     enable = true;
 
     settings = {
+      "org/gnome/desktop/peripherals/mouse".natural-scroll = true;
+      "org/gnome/desktop/peripherals/touchpad".tap-to-click = true;
+    
       "org/gnome/desktop/interface".enable-hot-corners = false;
       "org/gnome/shell/app-switcher".current-workspace-only = true;
       "org/gnome/mutter" = {
