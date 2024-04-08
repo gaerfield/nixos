@@ -4,8 +4,18 @@
     # google-cloud-sdk
     (google-cloud-sdk.withExtraComponents [google-cloud-sdk.components.gke-gcloud-auth-plugin])
   ];
-
+  home.sessionVariables = {
+    USE_GKE_GCLOUD_AUTH_PLUGIN = "True";
+  };
   programs.fish = {
+    shellAbbrs.gcx = {
+      setCursor = true;
+      expansion = "gcloud config configurations activate payfree-%";
+    };
+    # interactiveShellInit = ''
+    #  set -a tide_right_prompt_items gcloud
+    #  set -gx tide_show_gcloud_on kubectl helm kubens kubectx stern gcloud gcx k kcx kns
+    # '';
     plugins = [
       # Manually pull fish completions for gcloud
       # https://github.com/lgathy/google-cloud-sdk-fish-completion

@@ -6,7 +6,7 @@
     ./neovim
     ./byobu.nix
     ./tealdeer.nix
-    ./starship.nix
+    ./tide.nix
   ];
 
   # https://nixos.wiki/wiki/Fish
