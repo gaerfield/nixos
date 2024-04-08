@@ -30,16 +30,37 @@
       nord-vim
       nvim-web-devicons
       nvim-tree-lua
+      wilder-nvim
     ];
 
     extraLuaConfig = ''
+      -- enhanced completion menu
+      local wilder = require('wilder')
+      wilder.setup({modes = {':', '/', '?'}})
+      wilder.set_option('pipeline', {
+        wilder.branch(
+          wilder.cmdline_pipeline(),
+          wilder.search_pipeline()
+        ),
+      })
+      wilder.set_option('renderer', wilder.popupmenu_renderer(
+        wilder.popupmenu_border_theme({
+          highlights = {
+            border = 'Normal', -- highlight to use for the border
+          },
+          -- 'single', 'double', 'rounded' or 'solid'
+          -- can also be a list of 8 characters, see :h wilder#popupmenu_border_theme() for more details
+          border = 'rounded',
+        })
+      ))
+
       -- -- specific nvim-tree config
       -- disable netrw at the very start of your init.lua
       vim.g.loaded_netrw = 1
       vim.g.loaded_netrwPlugin = 1
       -- empty setup using defaults
       require("nvim-tree").setup()
-      -- blaa
+      -- experimental tree
       vim.keymap.set('n', '<leader>b', ':NvimTreeToggle<CR>')
       vim.keymap.set('n', '<leader>bf', ':NvimTreeFocus<CR>')
       vim.keymap.set('n', '<leader>bs', ':NvimTreeFindFile<CR>')

@@ -11,8 +11,8 @@ let g:airline_powerline_fonts = 1
 
 "" General
 " Other
-set wildmenu                    " Opens a menue when there is more than one file/command/...
-set wildmode=list:longest,full  " Shows all possible files/commands/... in a list
+" set wildmenu                    " Opens a menue when there is more than one file/command/...
+" set wildmode=longest:full,full  " Shows all possible files/commands/... in a list
 set t_Co=256                    " Colors to 256, for TODO
 colorscheme nord        " 'silent' to not fail before install
 set clipboard=unnamedplus       " use STRG+C/STRG+V - copy-paste-buffer
