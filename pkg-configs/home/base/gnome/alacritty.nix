@@ -46,12 +46,14 @@
     ]
     [font]
     normal = { family = "MesloLGS Nerd Font Mono", style = "Regular" }
+    bold = { family = "MesloLGS Nerd Font Mono", style = "Bold" }
+    italic = { family = "MesloLGS Nerd Font Mono", style = "Italic" }
     [window]
     padding = { x = 10, y = 10 } 
     decorations = "Full"
     [bell]
-    animation = "Linear"
-    duration = 500
+    animation = "EaseOutExpo"
+    duration = 0
     color = "#777696"
     command = "None"
     [selection]
