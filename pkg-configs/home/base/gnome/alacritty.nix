@@ -39,9 +39,24 @@
     background = '#F0DFAF'
   '';
 
+  # https://github.com/alacritty/alacritty/issues/6999#issuecomment-1903342590
   xdg.configFile."alacritty/alacritty.toml".text = ''
     import = [
       "${config.xdg.configHome}/alacritty/theme.toml"
     ]
+    [font]
+    normal = { family = "monospace", style = "Regular" }
+    [window]
+    padding = { x = 10, y = 10 } 
+    decorations = "Full"
+    [bell]
+    animation = "Linear"
+    duration = 500
+    color = "#777696"
+    command = "None"
+    [selection]
+    # Characters that are used as separators for "semantic words" in Alacritty
+    #semantic_escape_chars = ",│`|:\"' ()[]{}<>\\t"  # Default: ",│`|:\"' ()[]{}<>\\t"
+    save_to_clipboard = false
   '';
 }
