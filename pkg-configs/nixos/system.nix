@@ -46,7 +46,7 @@
       noto-fonts-color-emoji
 
       # nerdfonts
-      (nerdfonts.override {fonts = ["FiraCode" "JetBrainsMono"];})
+      (nerdfonts.override {fonts = ["FiraCode" "JetBrainsMono" "Meslo"];})
     ];
 
     # use fonts specified by user rather than default ones
@@ -58,7 +58,7 @@
     fontconfig.defaultFonts = {
       serif = ["Noto Serif" "Noto Color Emoji"];
       sansSerif = ["Noto Sans" "Noto Color Emoji"];
-      monospace = ["JetBrainsMono Nerd Font" "Noto Color Emoji"];
+      monospace = ["MesloLGS Nerd Font Mono" "Noto Color Emoji"];
       emoji = ["Noto Color Emoji"];
     };
   };

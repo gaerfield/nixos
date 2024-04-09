@@ -45,7 +45,7 @@
       "${config.xdg.configHome}/alacritty/theme.toml"
     ]
     [font]
-    normal = { family = "monospace", style = "Regular" }
+    normal = { family = "MesloLGS Nerd Font Mono", style = "Regular" }
     [window]
     padding = { x = 10, y = 10 } 
     decorations = "Full"
