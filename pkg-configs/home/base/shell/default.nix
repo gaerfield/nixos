@@ -7,6 +7,7 @@
     ./byobu.nix
     ./tealdeer.nix
     ./tide.nix
+    ./nnn.nix
   ];
 
   # https://nixos.wiki/wiki/Fish

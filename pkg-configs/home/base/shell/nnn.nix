@@ -1,5 +1,5 @@
 {
-  programs.nnn {
+  programs.nnn = {
     enable = true;
-  }
+  };
 }
