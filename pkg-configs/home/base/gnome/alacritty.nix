@@ -49,7 +49,7 @@
     bold = { family = "MesloLGS Nerd Font Mono", style = "Bold" }
     italic = { family = "MesloLGS Nerd Font Mono", style = "Italic" }
     [window]
-    padding = { x = 10, y = 10 } 
+    padding = { x = 2, y = 2 } 
     decorations = "Full"
     [bell]
     animation = "EaseOutExpo"
