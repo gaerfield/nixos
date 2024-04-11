@@ -79,7 +79,6 @@
     openFirewall = true;
   };
 
-
   # Enable flakes
   nix.settings = {
     experimental-features = [ "nix-command" "flakes" ];
@@ -116,4 +115,7 @@
     #media-session.enable = true;
   };
 
+  services.resolved = {
+    enable = true;
+  };
 }
