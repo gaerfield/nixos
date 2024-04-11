@@ -14,8 +14,6 @@
       gnome.adwaita-icon-theme
       gnomeExtensions.appindicator
       gnome.gnome-tweaks
-      firefox
-      chromium
       noto-fonts-color-emoji
       wl-clipboard
       libsecret
