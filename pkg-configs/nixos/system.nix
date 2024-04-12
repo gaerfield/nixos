@@ -115,12 +115,12 @@
     #media-session.enable = true;
   };
 
-  networking.nameservers = [ "9.9.9.9" "2620:fe::fe" ];
+  networking.nameservers = [ "9.9.9.9#dns.quad9.net" "2620:fe::fe#dns.quad9.net" ];
   services.resolved = {
     enable = true;
     dnssec = "true";
     domains = [ "~." ];
-    fallbackDns = [ "149.112.112.112" "2620:fe::9" ];
+    fallbackDns = [ "149.112.112.112#dns.quad9.net" "2620:fe::9#dns.quad9.net" ];
     dnsovertls = "true";
   };
 }
