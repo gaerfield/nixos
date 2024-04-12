@@ -115,7 +115,8 @@
     #media-session.enable = true;
   };
 
-  networking.nameservers = [ "9.9.9.9#dns.quad9.net" "2620:fe::fe#dns.quad9.net" ];
+  # networking.nameservers = [ "9.9.9.9#dns.quad9.net" "2620:fe::fe#dns.quad9.net" ];
+  networking.nameservers = [ "1.1.1.1#one.one.one.one" "2606:4700:4700::1111#one.one.one.one" ];
   services.resolved = {
     enable = true;
     dnssec = "true";
