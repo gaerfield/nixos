@@ -27,6 +27,7 @@
     pano # clipboard-manager, required libgda and gsound
     pkgs.libgda
     pkgs.gsound
+    pkgs.meld
   ];
 
   dconf = {

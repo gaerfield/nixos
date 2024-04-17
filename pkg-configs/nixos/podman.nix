@@ -19,4 +19,8 @@
   };
 
   users.users.blaschke.extraGroups = [ "docker" ];
+
+  programs.fish = {
+    shellAbbrs.dco = "docker compose";
+  };
 }

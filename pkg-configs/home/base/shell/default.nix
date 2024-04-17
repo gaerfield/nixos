@@ -41,12 +41,15 @@
       { name = "colored-man-pages"; src = colored-man-pages.src; }
     ];
     shellAbbrs.lsg = "ls | grep ";
+    shellAbbrs.glc = "git log --graph --all --pretty=\"format:ẞ%dẞ%cnẞ%s \" | awk 'BEGIN {FS=\"ẞ\"; OFS=\"ẞ\"} {print substr(\$2, 1, 60), substr(\$1, 1, 10), substr(\$3, 1, 15), substr(\$4, 1, 80)}'  | column -t -s\"ẞ\" | bat -p";
   };
 
   home.packages = with pkgs; [
     nix-your-shell
     alacritty
     grc
+    lazygit
+    lazydocker
     # archives
     zip
     unzip
