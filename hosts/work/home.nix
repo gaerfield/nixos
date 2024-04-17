@@ -12,6 +12,7 @@
     ./../../pkg-configs/home/idea.nix
     ./syncthing.nix
     ./../../pkg-configs/home/obsidian.nix
+    ./work-config.nix
   ];
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
