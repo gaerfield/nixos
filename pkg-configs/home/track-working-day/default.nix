@@ -1,11 +1,10 @@
-{
-
-  home.file.".local/bin/track-working-day" = {
-    source = ./track-working-day;
-    executable = true;
-  };
-
- systemd.user.services.track-working-day = {
+{ pkgs, ... }: 
+let
+  track-working-day = pkgs.callPackage ./script.nix {};
+in {
+  home.packages = [ track-working-day ];
+  
+  systemd.user.services.track-working-day = {
     Unit = {
       Description = "tracks my working day by logging logins, logouts, bootups and shutdowns";
     };
@@ -13,7 +12,7 @@
       WantedBy = [ "default.target" ];
     };
     Service = {
-      ExecStart = "%h/.local/bin/track-working-day start";
+      ExecStart = "${track-working-day}/bin/track-working-day start";
     };
   };
 }
