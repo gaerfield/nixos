@@ -8,7 +8,7 @@ in {
 
   options.system = {
     username = mkOption {
-      type = types.string;
+      type = types.str;
       default = "gaerfield";
       description = "default usernames that gets automatically logged in.";
     };
@@ -33,9 +33,9 @@ in {
 
     ### automatic login ###
     # Enable automatic login for the user.
-    services.xserver.displayManager = mkIf cfg.autologin {
-      autoLogin.enable = true;
-      autoLogin.user = cfg.username;
+    services.displayManager.autoLogin = mkIf cfg.autologin {
+      enable = true;
+      user = cfg.username;
     };
     # Workaround for GNOME autologin: https://github.com/NixOS/nixpkgs/issues/103746#issuecomment-945091229
     systemd = mkIf cfg.autologin {

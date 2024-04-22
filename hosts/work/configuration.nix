@@ -31,9 +31,9 @@
     networking.networkmanager.enable = true;
 
     # Configure keymap in X11
-    services.xserver = {
+    services.xserver.xkb = {
       layout = "de";
-      xkbVariant = "nodeadkeys";
+      variant = "nodeadkeys";
     };
 
     # Configure console keymap
