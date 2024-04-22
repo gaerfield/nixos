@@ -1,4 +1,7 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, ... }: 
+let 
+  mainuser = config.system.username;
+in {
   virtualisation = {
     containers.registries.search = [ "docker.io" ];
 
@@ -18,7 +21,7 @@
     shellAliases.docker-compose = "${config.virtualisation.podman.package}/bin/podman-compose";
   };
 
-  users.users.blaschke.extraGroups = [ "docker" ];
+  users.users."${mainuser}".extraGroups = [ "docker" ];
 
   programs.fish = {
     shellAbbrs.dco = "docker compose";
