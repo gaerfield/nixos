@@ -1,4 +1,4 @@
-{
+{ pkgs, ... }: {
 
   imports = [
     ./../../pkg-configs/home/base
@@ -22,6 +22,8 @@
     username = "blaschke";
     homeDirectory = "/home/blaschke";
   };
+
+  home.packages = [ pkgs.spotify ];
 
   programs.git = {
     # add git work account
