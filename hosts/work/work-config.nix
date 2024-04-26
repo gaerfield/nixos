@@ -5,7 +5,11 @@
       setCursor = true;
     };
     shellAbbrs.bft-display = {
-      expansion = "xdg-open http://localhost:5200/checkout-display/ && ssh -NT -L 8080:localhost:8080 -L 80:localhost:80 bft-%";
+      expansion = "xdg-open http://localhost/checkout-display/ && ssh -NT -L 8080:localhost:8080 -L 80:localhost:80 bft-%";
+      setCursor = true;
+    };
+    shellAbbrs.shopware-forward = {
+      expansion = "gcloud compute ssh shopware-% -- -NL 80:localhost:80 ";
       setCursor = true;
     };
   };
