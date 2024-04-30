@@ -1,6 +1,6 @@
-if not type -q istioctl
-  exit 0
-end
+#if not type -q istioctl
+#  exit 0
+#end
 
 set -x ISTIO_CLI_BINARIES_LOCATION $XDG_DATA_HOME/istio
 
