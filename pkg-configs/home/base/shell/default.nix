@@ -34,14 +34,32 @@
     
     plugins = with pkgs.fishPlugins; [
       { name = "grc"; src = grc.src; }
-      { name = "fzf"; src = fzf.src; }
-      { name = "fzf-fish"; src = fzf-fish.src; } # requires fd and bat
       { name = "sdkman-for-fish"; src = sdkman-for-fish.src; }
       { name = "sponge"; src = sponge.src; }
       { name = "colored-man-pages"; src = colored-man-pages.src; }
     ];
-    shellAbbrs.lsg = "ls | grep ";
-    shellAbbrs.glc = "git log --graph --all --pretty=\"format:ẞ%dẞ%cnẞ%s \" | awk 'BEGIN {FS=\"ẞ\"; OFS=\"ẞ\"} {print substr(\$2, 1, 60), substr(\$1, 1, 10), substr(\$3, 1, 15), substr(\$4, 1, 80)}'  | column -t -s\"ẞ\" | bat -p";
+    shellAbbrs = {
+      shit = { expansion = "sudo $history[1]"; position = "anywhere"; };
+      "!!" = { expansion = "$history[1]"; position = "anywhere"; };
+      "!!c" = "echo $history[1] | wl-copy";
+      opn = "xdg-open";
+      df = "df -h";
+      ip4 = "curl -sS4 ip.sb";
+      ip6 = "curl -sS6 ip.sb";
+      top = "btop";
+      htop = "btop";
+      lsg = "ls | grep ";
+      glc = "git log --graph --all --pretty=\"format:ẞ%dẞ%cnẞ%s \" | awk 'BEGIN {FS=\"ẞ\"; OFS=\"ẞ\"} {print substr(\$2, 1, 60), substr(\$1, 1, 10), substr(\$3, 1, 15), substr(\$4, 1, 80)}'  | column -t -s\"ẞ\" | bat -p";
+      scan-network = {
+        expansion = "nmap -sV -open -oG scan-result.log -p %22 172.20.0.0/24";
+        setCursor = true;
+      };
+      code = "codium";
+      c = "wl-copy";
+      p = "wl-paste";
+      scpr = "rsync -avz --info=progress2 --human-readable";
+      netstat = "ss";
+    };
   };
 
   home.packages = with pkgs; [

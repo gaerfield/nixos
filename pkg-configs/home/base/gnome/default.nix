@@ -120,6 +120,8 @@
         show-trash = false;
         hotkeys-show-dock = false;
         apply-custom-theme = true;
+        hot-keys = false;
+        disable-overview-on-startup = true;
       };
     };
   };
