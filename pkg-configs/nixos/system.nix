@@ -38,9 +38,9 @@ in {
       user = cfg.username;
     };
     # Workaround for GNOME autologin: https://github.com/NixOS/nixpkgs/issues/103746#issuecomment-945091229
-    systemd = mkIf cfg.autologin {
-      services."getty@tty1".enable = false;
-      services."autovt@tty1".enable = false;
+    systemd.services = mkIf cfg.autologin {
+      "getty@tty1".enable = false;
+      "autovt@tty1".enable = false;
     };
     
     boot.kernel.sysctl = {
@@ -49,7 +49,7 @@ in {
     
     # compatibility with non-nixos bash scripts
     # https://github.com/mic92/envfs
-    services.envfs.enable = true;
+    # services.envfs.enable = true;
 
     # do garbage collection weekly to keep disk usage low
     nix.gc = {
@@ -160,15 +160,19 @@ in {
       # no need to redefine it in your config for now)
       #media-session.enable = true;
     };
-
-    # networking.nameservers = [ "9.9.9.9#dns.quad9.net" "2620:fe::fe#dns.quad9.net" ];
-    networking.nameservers = [ "1.1.1.1#one.one.one.one" "2606:4700:4700::1111#one.one.one.one" ];
+    
+    networking.nameservers = [ "1.1.1.1#cloudflare-dns.com" "2606:4700:4700::1111#cloudflare-dns.com" ];
     services.resolved = {
       enable = true;
-      dnssec = "true";
+      dnssec = "allow-downgrade";
       domains = [ "~." ];
-      fallbackDns = [ "149.112.112.112#dns.quad9.net" "2620:fe::9#dns.quad9.net" ];
-      dnsovertls = "true";
+      fallbackDns = [
+        "1.0.0.1#cloudflare-dns.com"  "2606:4700:4700::1001#cloudflare-dns.com"
+      ];
+      # https://www.guyrutenberg.com/2023/03/14/split-dns-using-systemd-resolved/
+      dnsovertls = "opportunistic"; # allow fallback for corporate machines
+      llmnr = "resolve";
     };
+
   };
 }
