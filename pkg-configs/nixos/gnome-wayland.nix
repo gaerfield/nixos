@@ -40,6 +40,8 @@
       iagno # go game
       hitori # sudoku game
       atomix # puzzle game
+      gnome-weather # weather in notifications
+      gnome-clocks # world clocks in notifications
     ]);
   };
 

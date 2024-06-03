@@ -4,6 +4,7 @@
     ./autostart.nix
     ./flameshot.nix
     ./alacritty.nix
+    ./notifications.nix
   ];
 
   fonts.fontconfig.enable = true;
