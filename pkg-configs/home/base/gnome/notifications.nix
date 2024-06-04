@@ -4,8 +4,8 @@
 
 
     settings = {
-      "/org/gnome/desktop/notifications/application" = {
-        "/idea-ultimate/enable" = false;
+      "org/gnome/desktop/notifications/application" = {
+        "idea-ultimate/enable" = false;
         "org-gnome-texteditor/enable" = false;
         "obsidian/enable" = false;
         "org-gnome-clocks/enable" = false;
