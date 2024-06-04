@@ -23,7 +23,7 @@
     homeDirectory = "/home/blaschke";
   };
 
-  home.packages = [ pkgs.spotify ];
+  home.packages = [ pkgs.spotify pkgs.ausweisapp ];
 
   programs.git = {
     # add git work account
