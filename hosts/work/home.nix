@@ -25,6 +25,8 @@
 
   home.packages = [ pkgs.spotify pkgs.ausweisapp ];
 
+  programs.nix-index.enable = true;
+
   programs.git = {
     # add git work account
     # https://seansantry.com/development/2022/12/14/split-git-nix/

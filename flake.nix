@@ -12,6 +12,9 @@
     # Shameless plug: looking for a way to nixify your themes and make
     # everything match nicely? Try nix-colors!
     nix-colors.url = "github:misterio77/nix-colors";
+    # make nix-locate available to search in which package a executable is located
+    nix-index-database.url = "github:nix-community/nix-index-database";
+    nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = { 
@@ -19,6 +22,7 @@
     nixpkgs,
     nixos-hardware,
     home-manager,
+    nix-index-database,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -93,6 +97,7 @@
               # home-manager.users.gaerfield = import ./hosts/nixos-vm/home.nix;
 
         modules = [
+          nix-index-database.hmModules.nix-index
           ./hosts/nixos-vm/home.nix
         ];
       };
