@@ -34,7 +34,6 @@
     
     plugins = with pkgs.fishPlugins; [
       { name = "grc"; src = grc.src; }
-      { name = "sdkman-for-fish"; src = sdkman-for-fish.src; }
       { name = "sponge"; src = sponge.src; }
       { name = "colored-man-pages"; src = colored-man-pages.src; }
     ];
