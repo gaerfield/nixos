@@ -35,6 +35,8 @@
     enable = true;
 
     settings = {
+      # subpixel anti-aliasing (best for LCD's)
+      "org/gnome/desktop/interface".font-antialiasing = "rgba";
       "org/gnome/desktop/peripherals/mouse".natural-scroll = true;
       "org/gnome/desktop/peripherals/touchpad".tap-to-click = true;
     
